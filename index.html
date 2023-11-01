@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.min.js"></script>
+  <script src="sweetalert2.all.min.js"></script>
   <style>
     .no-scroll::-webkit-scrollbar {
       display: none;
@@ -15,23 +17,22 @@
    
   </style>
 </head>
-<body class="h-screen overflow-hidden">
-  <h1 class="text-center text-2xl my-5">My Todo App</h1>
-  <div class="border w-1/2 h-[100px] mx-auto p-5 rounded-lg">
+<body class="h-screen overflow-hidden bg-blue-500">
+  <h1 class="text-center text-white text-2xl my-5">MY TODO APP</h1>
+  <div class="border w-1/2 h-[100px] mx-auto p-5 rounded-lg bg-white">
     <div class="w-full h-[50px] mx-auto gap-2 flex justify-between items-start">
       <input type="text" placeholder="Add a new task"
-      class="border w-3/4 h-10 rounded p-3" id="input-panel">
-      <button class="border w-1/4 h-10 rounded" id="btn" onclick="createTodo()">Add Task</button>
-      <button class="border w-1/4 h-10 rounded hidden" id="update-btn" onclick="handleEditMode('${id}')">Update</button>
+      class="border w-3/4 h-10 rounded p-3 text-blue-500" id="input-panel">
+      <button class="cursor-pointer border border-blue-500 w-1/4 h-10 rounded bg-blue-500 text-white hover:bg-white hover:text-blue-500" id="btn" onclick="createTodo()">Add Task</button>
+      <button class="border w-1/4 h-10 rounded hidden" onclick="updateTodo()" id="update-btn">Update</button>
     </div>
-    <p class="text-center text-red-500" id="error">Error</p>
+    <p class="text-center text-red-500" id="error"></p>
   </div>
   <div class="border w-1/2 min-h-[20%] max-h-[70%] p-5 my-5 mx-auto rounded-lg overflow-y-scroll no-scroll scroll-smooth" id="display-box">
-    <p class="hidden text-center pt-5 text-gray-300" id="todo-placeholder">Your todos will appear here</p>
+    
     
   </div>
   <script src="index.js"></script>
-  <script src="sweetalert2.min.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
+
 </body>
 </html>
